@@ -152,3 +152,9 @@
   colour: LavenderBlush;
 }
 
+.center-text {
+    margin-top: 10%;
+    width: 60%;
+    padding: 10px;
+}
+
