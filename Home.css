@@ -191,7 +191,7 @@
 }
 
 .u-section-2 .u-layout-cell-1 {
-  min-height: 426px;
+  min-height: 670px;
   background-image: none;
 }
 
@@ -200,11 +200,11 @@
 }
 
 .u-section-2 .u-image-1 {
-  width: 248px;
-  height: 248px;
+  width: 308px;
+  height: 308px;
   background-image: url("images/SabrinaHeadshot-2021.jpeg");
   background-position: 50% 50%;
-  margin: 47px auto 0;
+  margin: 129px auto 0;
 }
 
 .u-section-2 .u-social-icons-1 {
@@ -212,7 +212,7 @@
   min-height: 16px;
   width: 86px;
   min-width: 44px;
-  margin: 31px auto 0;
+  margin: 38px auto 0;
 }
 
 .u-section-2 .u-icon-1 {
@@ -260,7 +260,12 @@
   }
 
   .u-section-2 .u-layout-cell-1 {
-    min-height: 351px;
+    min-height: 552px;
+  }
+
+  .u-section-2 .u-image-1 {
+    width: 306px;
+    height: 306px;
   }
 
   .u-section-2 .u-social-icons-1 {
@@ -282,12 +287,14 @@
   }
 
   .u-section-2 .u-layout-cell-1 {
-    min-height: 269px;
+    min-height: 423px;
   }
 
   .u-section-2 .u-image-1 {
     width: 222px;
     height: 222px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .u-section-2 .u-layout-cell-2 {
@@ -306,12 +313,17 @@
   }
 
   .u-section-2 .u-layout-cell-1 {
-    min-height: 526px;
+    min-height: 828px;
   }
 
   .u-section-2 .u-container-layout-1 {
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  .u-section-2 .u-image-1 {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .u-section-2 .u-container-layout-2 {
@@ -322,7 +334,7 @@
 
 @media (max-width: 575px) {
   .u-section-2 .u-layout-cell-1 {
-    min-height: 331px;
+    min-height: 521px;
   }
 
   .u-section-2 .u-text-1 {
@@ -333,7 +345,7 @@
 }
 
 .u-section-3 .u-sheet-1 {
-  min-height: 812px;
+  min-height: 1233px;
 }
 
 .u-section-3 .u-layout-wrap-1 {
@@ -362,7 +374,7 @@
 }
 
 .u-section-3 .u-image-3 {
-  min-height: 307px;
+  min-height: 295px;
   background-image: url("images/DesignStudyResultsupdated.png");
   background-position: 50% 50%;
 }
@@ -372,7 +384,7 @@
 }
 
 .u-section-3 .u-layout-cell-4 {
-  min-height: 307px;
+  min-height: 99px;
 }
 
 .u-section-3 .u-container-layout-4 {
@@ -387,18 +399,17 @@
 }
 
 .u-section-3 .u-image-4 {
-  min-height: 614px;
-  background-image: url("images/ScreenShot2022-09-15at8.31.07PM.png");
-  background-position: 50% 50%;
+  min-height: 394px;
   --animation-custom_in-translate_x: 300px;
   --animation-custom_in-translate_y: 0px;
   --animation-custom_in-opacity: 0;
   --animation-custom_in-rotate: 0deg;
   --animation-custom_in-scale: 1;
+  background-image: url("images/Screenshot2023-09-28at8.49.22AM.png");
 }
 
 .u-section-3 .u-container-layout-5 {
-  padding: 30px;
+  padding: 0;
 }
 
 @media (max-width: 1199px) {
@@ -415,15 +426,16 @@
   }
 
   .u-section-3 .u-image-3 {
-    min-height: 253px;
+    min-height: 243px;
   }
 
   .u-section-3 .u-layout-cell-4 {
-    min-height: 253px;
+    min-height: 82px;
   }
 
   .u-section-3 .u-image-4 {
-    min-height: 506px;
+    min-height: 325px;
+    background-position: 50% 50%;
   }
 }
 
@@ -441,7 +453,7 @@
   }
 
   .u-section-3 .u-image-3 {
-    min-height: 291px;
+    min-height: 279px;
   }
 
   .u-section-3 .u-layout-cell-4 {
@@ -453,7 +465,7 @@
   }
 
   .u-section-3 .u-image-4 {
-    min-height: 1163px;
+    min-height: 747px;
   }
 }
 
@@ -490,12 +502,7 @@
   }
 
   .u-section-3 .u-image-4 {
-    min-height: 872px;
-  }
-
-  .u-section-3 .u-container-layout-5 {
-    padding-left: 10px;
-    padding-right: 10px;
+    min-height: 560px;
   }
 }
 
@@ -521,6 +528,6 @@
   }
 
   .u-section-3 .u-image-4 {
-    min-height: 549px;
+    min-height: 353px;
   }
 }
