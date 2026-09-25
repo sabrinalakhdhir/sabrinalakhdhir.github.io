@@ -208,18 +208,27 @@
 }
 
 .u-section-2 .u-social-icons-1 {
-  height: 37px;
+  height: 32px;
   min-height: 16px;
-  width: 86px;
-  min-width: 44px;
-  margin: 38px auto 0;
+  width: 236px;
+  min-width: 172px;
+  box-shadow: 2px 0 0 0 rgba(0,0,0,0);
+  margin: 30px auto 0;
 }
 
 .u-section-2 .u-icon-1 {
-  height: 36px;
+  height: 100%;
 }
 
 .u-section-2 .u-icon-2 {
+  height: 100%;
+}
+
+.u-section-2 .u-icon-3 {
+  height: 100%;
+}
+
+.u-section-2 .u-icon-4 {
   height: 100%;
 }
 
@@ -266,10 +275,6 @@
   .u-section-2 .u-image-1 {
     width: 306px;
     height: 306px;
-  }
-
-  .u-section-2 .u-social-icons-1 {
-    width: 83px;
   }
 
   .u-section-2 .u-layout-cell-2 {
@@ -365,7 +370,7 @@
 
 .u-section-3 .u-image-2 {
   min-height: 519px;
-  background-image: url("images/storytellinggarment.png");
+  background-image: url("images/glucomaker1.png");
   background-position: 50% 50%;
 }
 
@@ -405,7 +410,7 @@
   --animation-custom_in-opacity: 0;
   --animation-custom_in-rotate: 0deg;
   --animation-custom_in-scale: 1;
-  background-image: url("images/Screenshot2023-09-28at8.49.22AM.png");
+  background-image: url("images/Screenshot2023-09-18at8.50.43AM.png");
   background-position: 50% 50%;
 }
 
