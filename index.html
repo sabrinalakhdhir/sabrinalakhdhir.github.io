@@ -23,18 +23,124 @@
   object-fit: cover;
   object-position: center top;
 }
+
+/* Visual refresh: editorial spacing, clearer hierarchy, and prototype image areas. */
+:root{--line:#dfd1c4}
+::selection{background:var(--lime);color:var(--ink)}
+.nav{position:relative}
+.navlinks a{padding:7px 0;transition:color .2s ease}
+.navlinks a:hover{color:var(--orange)}
+.hero{gap:clamp(32px,6vw,78px);padding-top:74px;padding-bottom:70px}
+.hero h1{max-width:650px}
+.hero-art{height:clamp(380px,43vw,520px);min-height:0;background:linear-gradient(145deg,#e9dcd0,#d9c8d7 70%,#cbb5a7);border-radius:22px;box-shadow:12px 12px 0 rgba(96,69,111,.10)}
+.hero-photo{height:100%;object-position:center 25%}
+.pill{background:rgba(255,250,244,.62)}
+.section{padding-top:84px;padding-bottom:84px}
+.section-head{margin-bottom:38px}
+.theme{border-radius:4px;transition:transform .2s ease,box-shadow .2s ease}
+.theme:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(48,36,58,.06)}
+.project{padding:0 0 24px;border-radius:5px;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
+.project:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(48,36,58,.07)}
+.project-top,.project h3,.project .subtitle,.project p,.project .links{margin-left:24px;margin-right:24px}
+.project-top{margin-top:23px}
+.project h3{margin-top:17px}
+/* Project figure carousels: replace each placeholder slide with an img when adding figures. */
+.project-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--lime);
+}
+.project-carousel.expressive{--carousel-accent:#80628c;background:linear-gradient(135deg,#e7dced,#f3e8db 58%,#cbb7a6)}
+.project-carousel.glucomaker{--carousel-accent:#597a67;background:linear-gradient(135deg,#dce6df,#f1e5d7 58%,#c9b8d6)}
+.project-carousel.awareness{--carousel-accent:#8b6658;background:linear-gradient(135deg,#e7dced,#e8d6c7 58%,#d7e1dc)}
+
+.carousel-slides {
+  position: absolute;
+  inset: 0;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.carousel-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.carousel-slide img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+/*.carousel-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.carousel-placeholder:before,.carousel-placeholder:after{content:"";position:absolute;border:1px solid color-mix(in srgb,var(--carousel-accent) 35%,transparent);border-radius:50%;width:44%;aspect-ratio:1;transform:rotate(-18deg)}
+.carousel-placeholder:after{width:28%;border-radius:8px;transform:rotate(14deg);background:rgba(255,250,244,.42)}
+.carousel-placeholder span{position:relative;z-index:1;padding:9px 13px;border:1px solid color-mix(in srgb,var(--carousel-accent) 40%,transparent);background:rgba(255,250,244,.9);color:var(--carousel-accent);font-size:11px;font-weight:750;letter-spacing:.08em;text-transform:uppercase;border-radius:3px;text-align:center}*/
+.carousel-controls{position:absolute;inset:auto 12px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px;z-index:2;pointer-events:none}
+.carousel-controls button{pointer-events:auto;width:34px;height:34px;border:1px solid rgba(48,36,58,.2);border-radius:50%;background:rgba(255,250,244,.94);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(48,36,58,.08)}
+.carousel-controls button:hover{background:white;transform:scale(1.04)}
+.carousel-count{pointer-events:none;padding:5px 9px;border-radius:99px;background:rgba(255,250,244,.94);color:var(--ink);font-size:11px;font-weight:700;font-variant-numeric:tabular-nums}
+.carousel-dots{position:absolute;top:12px;right:12px;display:flex;gap:6px;z-index:2}
+.carousel-dots button{width:7px;height:7px;padding:0;border:0;border-radius:50%;background:rgba(255,250,244,.7);box-shadow:0 0 0 1px rgba(48,36,58,.16);cursor:pointer}
+.carousel-dots button[aria-current="true"]{background:var(--ink);box-shadow:0 0 0 2px rgba(255,250,244,.8)}
+.pubs{margin-top:8px}
+.pub{transition:padding .2s ease}
+.pub:hover{padding-left:8px}
+.contact{box-shadow:8px 8px 0 rgba(96,69,111,.08)}
+.future-section{background:linear-gradient(180deg,rgba(231,220,237,.26),rgba(247,241,232,0))}
+@media(max-width:780px){.hero{padding-top:50px}.hero-art{height:350px}.section{padding-top:56px;padding-bottom:56px}.project-top,.project h3,.project .subtitle,.project p,.project .links{margin-left:20px;margin-right:20px}.project-top{margin-top:20px}.project-carousel{min-height:170px}}
+@media(max-width:520px){.hero-art{height:310px}.project-carousel{min-height:150px}.project-top{align-items:flex-start}}
+
+/* Research map: a visual bridge from the current program to future directions. */
+.research-map{margin-top:34px;padding:clamp(18px,3vw,32px);background:rgba(255,250,244,.62);border:1px solid var(--line);border-radius:8px}
+.map-question{max-width:760px;margin:0 auto 25px;padding:22px 26px;background:var(--ink);color:#fffaf4;text-align:center;border-radius:5px}
+.map-question .eyebrow{color:#d9c5e4}
+.map-question h3{font:500 clamp(23px,3vw,34px)/1.18 var(--serif);letter-spacing:-.025em;margin:9px auto 0;max-width:650px}
+.map-caption{text-align:center;text-transform:uppercase;letter-spacing:.13em;font-size:10px;font-weight:750;color:var(--muted);margin:18px 0 12px}
+.map-nodes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.map-node{display:flex;flex-direction:column;gap:9px;min-height:150px;padding:18px;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--green);border-radius:4px;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}
+.map-node:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(48,36,58,.07)}
+.map-node.future-node{border-top-color:var(--orange);background:#fff8f1}
+.map-node .map-num{font:italic 15px var(--serif);color:var(--orange)}
+.map-node strong{font:500 21px/1.2 var(--serif);letter-spacing:-.02em}
+.map-node span:last-child{font-size:12px;line-height:1.5;color:var(--muted)}
+.map-bridge{display:flex;align-items:center;justify-content:center;gap:13px;margin:20px 0;color:var(--green);font-size:12px;font-weight:700;text-align:center}
+.map-bridge:before,.map-bridge:after{content:"";height:1px;flex:1;background:var(--line)}
+.map-bridge span{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border:1px solid var(--line);border-radius:99px;background:var(--paper)}
+.map-footnote{font-size:11px;color:var(--muted);margin:17px 0 0;text-align:center}
+.project-contribution{margin:18px 24px 0;padding:15px 16px;background:#f5eee7;border-left:3px solid var(--carousel-accent,var(--green));border-radius:0 4px 4px 0}
+.project-contribution .contribution-label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--green);margin-bottom:10px}
+.contribution-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.contribution-point{font-size:11px;line-height:1.45;color:var(--muted)}
+.contribution-point strong{display:block;font:500 16px/1.2 var(--serif);color:var(--ink);margin-bottom:4px}
+@media(max-width:780px){.map-nodes{grid-template-columns:1fr}.map-node{min-height:0}.map-bridge{margin:15px 0}.contribution-points{grid-template-columns:1fr}.project-contribution{margin-left:20px;margin-right:20px}}
+
 </style>
 </head>
 <body>
 <header class="wrap nav">
 <a class="brand" href="#top">Sabrina Lakhdhir<span style="color:var(--orange)">.</span></a>
-<nav class="navlinks" aria-label="Main navigation"><a href="#about">· About ·</a><a href="#research">Current research</a><a href="#projects">Selected Projects</a><!--<a href="#future">Future directions</a>--><a href="#publications">Publications</a><a href="#contact">Contact</a></nav>
+<nav class="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#research">Current research</a><a href="researchmap.html">Research map</a><a href="#projects">Selected Projects</a><!--<a href="#future">Future directions</a>--><a href="#publications">Publications</a><a href="#contact">Contact</a></nav>
 </header>
 <main id="top">
 <section class="wrap hero">
 <div><div class="eyebrow">Human–Computer Interaction Researcher</div><h1>Designing technology for <em>more positive human experiences.</em></h1>
 <p class="intro">I’m a senior PhD candidate in Computer Science at the University of Victoria. My research asks <em> how can we design interactive technologies that cultivate more positive human experiences—with ourselves, with others, and with the world around us.</em> My doctoral work investigates this question through the custom design of wearable technologies and the social experiences they make possible.</p>
-<div class="actions"><a class="btn primary" href="#research">Explore my research ↘</a><a class="btn" href="#future">Future directions</a><a class="btn" href="https://drive.google.com/file/d/1T-hcU4v4MALC1vupWboWVR5NTpMLL1X0/view?usp=sharing" target="_blank" rel="noreferrer">Full CV ↗</a></div>
+<div class="actions"><a class="btn primary" href="#research">Explore my research ↘</a><a class="btn" href="researchmap.html">Future directions</a><a class="btn" href="https://drive.google.com/file/d/1T-hcU4v4MALC1vupWboWVR5NTpMLL1X0/view?usp=sharing" target="_blank" rel="noreferrer">Full CV ↗</a></div>
 <div class="pillrow"><span class="pill">Positive social experiences</span><span class="pill">Interactive technologies</span><span class="pill">Self-expression</span><span class="pill">Wellbeing</span></div>
 </div>
 <!-- figure out how to replace this with a picture of myself -->
@@ -49,7 +155,7 @@
 </section>
 
 <!-- review and edit this section -->
-<section class="section" id="about"><div class="wrap about-grid"><div><div class="eyebrow">About</div><h2 class="about-title">Interactive technologies, human experiences, & social and emotional wellbeing.</h2></div><div><p>As a senior PhD candidate in Computer Science at the University of Victoria working in human–computer interaction, I investigate how custom wearable technologies can create positive social experiences by supporting self-expression, accounting for social contexts, and mediating interactions.</p><p>Looking ahead, I aim to extend this work beyond wearables to study how interactive technologies can cultivate more positive human experiences broadly. My future research will explore emotional and social awareness, positive social experiences, and material and embodied interaction.</p><p>From a young age, I've had an interest in connecting the possibilities of computing with the creativity of making and the nuances of everyday social life. HCI provides a lens through which these worlds collide, opening up doors to consider how technologies can be designed in more whimsical and playful manners to promote feelings of happiness and joy, while remainingful meaningful to their users.</p></div></div></section>
+<section class="section" id="about"><div class="wrap about-grid"><div><div class="eyebrow">· About ·</div><h2 class="about-title">Interactive technologies, human experiences, & social and emotional wellbeing.</h2></div><div><p>As a senior PhD candidate in Computer Science at the University of Victoria working in human–computer interaction, I investigate how custom wearable technologies can create positive social experiences by supporting self-expression, accounting for social contexts, and mediating interactions.</p><p>Looking ahead, I aim to extend this work beyond wearables to study how interactive technologies can cultivate more positive human experiences broadly. My future research will explore emotional and social awareness, positive social experiences, and material and embodied interaction.</p><p>From a young age, I've had an interest in connecting the possibilities of computing with the creativity of making and the nuances of everyday social life. HCI provides a lens through which these worlds collide, opening up doors to consider how technologies can be designed in more whimsical and playful manners to promote feelings of happiness and joy, while remainingful meaningful to their users.</p></div></div></section>
 
 
 <section class="section" id="research"><div class="wrap"><div class="section-head"><div><div class="eyebrow">· Current research ·</div><h2>Creating positive social experiences through the design of custom wearables.</h2></div><p class="section-lead">My current research investigates how the design of custom wearable technologies can support positive social experiences. Across this work, I explore how wearables can help people express themselves, fit into the social contexts of everyday life, and mediate interactions with others.</p></div>
@@ -59,32 +165,46 @@
 <article class="theme"><span class="number">03 /</span><h3>Mediating social interactions</h3><p>How can wearable technologies shape what people communicate and do together? This work explores wearables as mediators of interaction that can make intentions more legible and support more positive encounters.</p></article>
 </div><p class="note">These themes are complementary lenses towards answering my overarching research question: how does the design of a device's form, function, or perception influence the resulting social experiences they create?</p></div></section>
 
-
 <section class="section" id="projects"><div class="wrap"><div class="section-head"><div><div class="eyebrow">· Selected projects ·</div><h2>Research through design and making -- <em>personalized and expressive technologies.</em></h2></div><p class="section-lead">These projects highlight the foundational concepts that make up my current research. The first four are most directly connected to my doctoral thesis, while the latter projects demonstrate related interests in creativity and wellbeing more broadly.</p></div>
 <h3 class="group-heading">Custom wearables & positive social experiences.</h3><div class="projects">
-<article class="project"><div class="project-top"><span class="eyebrow">Self-expression · Making</span><span class="tag">CHI 2024</span></div><h3>Expressive Clothing</h3><div class="subtitle">Information communication through clothing</div><p>Self-expression is a common driver behind the customization of physical artifacts. This project considered the custom design of clothing, a practice commonly undertaken by hobbyist-sewers to gain control over the design of their garments. Through a diary study, we identified five multi-facted approaches participants undertook for self-expression and four challenges they faced during their design processes. We further ideated upon how technological tools can help hobbyists overcome these challenges.</p><div class="links"><a href="https://doi.org/10.1145/3613904.3642338" target="_blank" rel="noreferrer">CHI ’24 full paper ↗</a><a href="https://drive.google.com/file/d/1plf5hdiotn2UnpRCkVVsyGs2B2bkOYN4/view?usp=sharing" target="_blank" rel="noreferrer">GI ’23 Extended Abstract ↗</a><a href="https://inria.hal.science/hal-05514531/document" target="_blank" rel="noreferrer">GI ’23 Poster ↗</a><a href="https://drive.google.com/file/d/1ayJJfVznC8RZLlvG2vYxSBrKSHO0_L-v/view?usp=sharing" target="_blank" rel="noreferrer">CHI ’22 workshop poster + abstract ↗</a></div></article>
-<article class="project"><div class="project-top"><span class="eyebrow">Health · Customization · Co-design</span><span class="tag">CHI 2024</span></div><h3>Collaborative Assistive Technology Design</h3><div class="subtitle">Personalizing glucose monitors with GlucoMaker</div><p>Glucose monitors are used by millions of individuals to manage type 1 diabetes, however, their design often does not meet user needs. Through a three-phase co-design study consisting of prototyping, interviews, and focus groups, I investigated which glucose-monitor form factors and functionalities people with type 1 diabetes prioritize, and when collaboration between people with diabetes, healthcare professionals, and designers is beneficial. The findings informed the design and implementation of <em>GlucoMaker</em>, using which three customized monitors were designed and fabricated. <em>GlucoMaker</em> was later evaluated in a real-world asynchronous co-design setting to uncover how such collaborative tools support articulation work, boundary work, and translation work, and how they might support them even more.</p><div class="links"><a href="https://doi.org/10.1145/3613904.3642435" target="_blank" rel="noreferrer">CHI ’24 full paper ↗</a><a href="https://drive.google.com/file/d/19l6QDLuUJxrAB2OP4gZSotdfmkHh-CKA/view?usp=sharing" target="_blank" rel="noreferrer">CHI '25 Workshop short paper' ↗</a><a href="https://drive.google.com/file/d/1m4fnsfojwCQ6gkgFHQPKDPbQ6XQhtr7q/view?usp=sharing" target="_blank" rel="noreferrer">CHI ’25 workshop poster ↗</a><a href="https://drive.google.com/file/d/1p4RshXJS5U8vsrv7_P1qUkkVG8DiNOLJ/view?usp=sharing" target="_blank" rel="noreferrer">ASSETS ’22 position paper ↗</a></div></article>
-<article class="project"><div class="project-top"><span class="eyebrow">Mobility · Social fit · IoT</span><span class="tag">CHI EA 2023</span></div><h3>Wearing Awareness</h3><div class="subtitle">Designing wearables for autonomous vehicle-pedestrian interactions</div><p>As part of my undergraduate honours thesis, I conducted a design study to ideate subtle and out-of-the-box ideas for pedestrian-worn devices that could be used to communicate autonous vehicle intent and awareness to pedestrians. We gathered 21 unique ideas, and prototyped three sample pedestrian-wearables to convey the concept. </p><div class="links"><a href="https://dl.acm.org/doi/full/10.1145/3544549.3585655" target="_blank" rel="noreferrer">CHI ’23 Extended Abstract ↗</a><a href="https://drive.google.com/file/d/1HnwTmWND_SHsq-GM0Syjys7VPUcCRvbR/view?usp=sharing"target="_blank" rel="noreferrer">Poster ↗</a></div></article>
-<article class="project"><div class="project-top"><span class="eyebrow">Well-being · Wearables · Social Acceptability</span><span class="tag">ONGOING</span></div><h3>Towards a framework for designing socially acceptable wearables for well-being</h3><div class="subtitle">A spectrum-based design space</div><p>Connecting insights from my three previous projects, this exploratory work compared commercial well-being wearables with participant-proposed designs to explore how broader societal considerations such as context, device goals, and audiences inform how device characteristics are designed. We demonstrate that social acceptability is better understood as a spectrum shaped by relationships among multiple attributes rather than as a linear checklist.</p><div class="links"><a href="https://everydaywearableforhealth.github.io/assets/pdf/Lakhdhir.pdf" target="_blank" rel="noreferrer">CHI ’26 workshop short paper ↗</a><!--<a href="https://sabrinalakhdhir.github.io/Research-%2B-Publications.html" target="_blank" rel="noreferrer">CHI ’26 workshop short paper ↗</a> --> </div></article>
+<article class="project" id="project-expressive"><!-- Replace this placeholder with an image of your Expressive Clothing prototypes. --><div class="project-carousel expressive" data-carousel aria-label="Expressive Clothing project figures">
+<div class="carousel-slides">
+<!-- To add a figure, replace a slide's carousel-placeholder with: <img src="your-image-file.jpg" alt="Describe this figure"> -->
+<div class="carousel-slide is-active"><div class="carousel-placeholder"><img src="storytelling1.jpeg"><span>Expressive Clothing · An example of how participants mapped different encodings onto their final designs.</span></div></div>
+<div class="carousel-slide"><div class="carousel-placeholder"><img src="storytelling2.jpeg"><span>Expressive Clothing · An example of a conversation-starter expressive garment.</span></div></div>
+<div class="carousel-slide"><div class="carousel-placeholder"><img src="storytelling3.jpeg"><span>Expressive Clothing · An example of an allusive expresive garment.</span></div></div>
+</div><div class="carousel-dots" aria-label="Choose figure"></div><div class="carousel-controls"><button type="button" data-prev aria-label="Previous figure">‹</button><span class="carousel-count" aria-live="polite">1 / 3</span><button type="button" data-next aria-label="Next figure">›</button></div></div><div class="project-top"><span class="eyebrow">Self-expression · Making</span><span class="tag">CHI 2024</span></div><h3>Expressive Clothing</h3><div class="subtitle">Information communication through clothing</div><p>Self-expression is a common driver behind the customization of physical artifacts. This project considered the custom design of clothing, a practice commonly undertaken by hobbyist-sewers to gain control over the design of their garments. Through a diary study, we identified five multi-facted approaches participants undertook for self-expression and four challenges they faced during their design processes. We further ideated upon how technological tools can help hobbyists overcome these challenges.</p><div class="project-contribution"><div class="contribution-label">Research contribution</div><div class="contribution-points"><div class="contribution-point"><strong>5 approaches</strong>Identified five multifacted communication approaches. </div><div class="contribution-point"><strong>4 challenges</strong>Uncovered four barriers to encoding information in clothing. </div><div class="contribution-point"><strong>4 design opportunities</strong>Discussed four opportunities for supporting self-expression in design.</div></div></div><div class="links"><a href="https://doi.org/10.1145/3613904.3642338" target="_blank" rel="noreferrer">CHI ’24 full paper ↗</a><a href="https://drive.google.com/file/d/1plf5hdiotn2UnpRCkVVsyGs2B2bkOYN4/view?usp=sharing" target="_blank" rel="noreferrer">GI ’23 Extended Abstract ↗</a><a href="https://inria.hal.science/hal-05514531/document" target="_blank" rel="noreferrer">GI ’23 Poster ↗</a><a href="https://drive.google.com/file/d/1ayJJfVznC8RZLlvG2vYxSBrKSHO0_L-v/view?usp=sharing" target="_blank" rel="noreferrer">CHI ’22 workshop poster + abstract ↗</a></div></article>
+<article class="project" id="project-glucomaker"><!-- Replace this placeholder with an image of your GlucoMaker prototypes. --><div class="project-carousel glucomaker" data-carousel aria-label="GlucoMaker project figures">
+<div class="carousel-slides">
+<!-- To add a figure, replace a slide's carousel-placeholder with: <img src="your-image-file.jpg" alt="Describe this figure"> -->
+<div class="carousel-slide is-active"><div class="carousel-placeholder"><img src="purse.jpeg"><span>GlucoMaker · An audio alerting and exact numerical reading purse prototype.</span></div></div>
+<div class="carousel-slide"><div class="carousel-placeholder"><img src="hairclip.jpeg"><span>GlucoMaker · A vibrating hairclip prototype.</span></div></div>
+<div class="carousel-slide"><div class="carousel-placeholder"><img src="pendant.jpeg"><span>GlucoMaker · A vibrating pendant prototype.</span></div></div>
+<div class="carousel-slide"><div class="carousel-placeholder"><img src="glucomaker1.jpeg"><span>GlucoMaker · The designed and developed co-design system - Customization Guidance Interface.</span></div></div>
+<div class="carousel-slide"><div class="carousel-placeholder"><img src="glucomaker2.jpeg"><span>GlucoMaker · The designed and developed co-design system - Device Designer Interface, Collaborative Discussion Interface, Learning Portal, Project Progress.</span></div></div>
+</div><div class="carousel-dots" aria-label="Choose figure"></div><div class="carousel-controls"><button type="button" data-prev aria-label="Previous figure">‹</button><span class="carousel-count" aria-live="polite">1 / 3</span><button type="button" data-next aria-label="Next figure">›</button></div></div><div class="project-top"><span class="eyebrow">Health · Customization · Co-design</span><span class="tag">CHI 2024</span></div><h3>Collaborative Assistive Technology Design</h3><div class="subtitle">Personalizing glucose monitors with GlucoMaker</div><p>Glucose monitors are used by millions of individuals to manage type 1 diabetes, however, their design often does not meet user needs. Through a three-phase co-design study consisting of prototyping, interviews, and focus groups, I investigated which glucose-monitor form factors and functionalities people with type 1 diabetes prioritize, and when collaboration between people with diabetes, healthcare professionals, and designers is beneficial. The findings informed the design and implementation of <em>GlucoMaker</em>, using which three customized monitors were designed and fabricated. <em>GlucoMaker</em> was later evaluated in a real-world asynchronous co-design setting to uncover how such collaborative tools support articulation work, boundary work, and translation work, and how they might support them even more.</p><div class="project-contribution"><div class="contribution-label">Research contribution</div><div class="contribution-points"><div class="contribution-point"><strong>Co-design</strong>Coordinated remote co-design across interviews, focus groups, and design sessions.</div><div class="contribution-point"><strong>3 prototypes</strong>Designed and fabricated three functioning, non-traditional wearable monitors.</div><div class="contribution-point"><strong>System design</strong>Iteratively designed and developed an interactive, scaffolded design tool.</div></div></div><div class="links"><a href="https://doi.org/10.1145/3613904.3642435" target="_blank" rel="noreferrer">CHI ’24 full paper ↗</a><a href="https://drive.google.com/file/d/19l6QDLuUJxrAB2OP4gZSotdfmkHh-CKA/view?usp=sharing" target="_blank" rel="noreferrer">CHI '25 Workshop short paper' ↗</a><a href="https://drive.google.com/file/d/1m4fnsfojwCQ6gkgFHQPKDPbQ6XQhtr7q/view?usp=sharing" target="_blank" rel="noreferrer">CHI ’25 workshop poster ↗</a><a href="https://drive.google.com/file/d/1p4RshXJS5U8vsrv7_P1qUkkVG8DiNOLJ/view?usp=sharing" target="_blank" rel="noreferrer">ASSETS ’22 position paper ↗</a></div></article>
+<article class="project" id="project-awareness"><!-- Replace this placeholder with an image of your Wearing Awareness prototypes. --><div class="project-carousel awareness" data-carousel aria-label="Wearing Awareness project figures">
+<div class="carousel-slides">
+<!-- To add a figure, replace a slide's carousel-placeholder with: <img src="your-image-file.jpg" alt="Describe this figure"> -->
+<div class="carousel-slide is-active"><div class="carousel-placeholder"><img src="mask.jpeg"><span>Wearing Awareness · A stretching facemask prototype.</span></div></div>
+<div class="carousel-slide"><div class="carousel-placeholder"><img src="diagram.jpeg"><span>Wearing Awareness · A collection of the unique feedback mechanism designs our participants sketched.</span></div></div>
+<div class="carousel-slide"><div class="carousel-placeholder"><img src="armband.jpeg"><span>Wearing Awareness · A constricting armband prototype.</span></div></div>
+</div><div class="carousel-dots" aria-label="Choose figure"></div><div class="carousel-controls"><button type="button" data-prev aria-label="Previous figure">‹</button><span class="carousel-count" aria-live="polite">1 / 3</span><button type="button" data-next aria-label="Next figure">›</button></div></div><div class="project-top"><span class="eyebrow">Mobility · Social fit · IoT</span><span class="tag">CHI EA 2023</span></div><h3>Wearing Awareness</h3><div class="subtitle">Designing wearables for autonomous vehicle-pedestrian interactions</div><p>As part of my undergraduate honours thesis, I conducted a design study to ideate subtle and out-of-the-box ideas for pedestrian-worn devices that could be used to communicate autonous vehicle intent and awareness to pedestrians. We gathered 21 unique ideas, and prototyped three sample pedestrian-wearables to convey the concept. </p><div class="project-contribution"><div class="contribution-label">Research contribution</div><div class="contribution-points"><div class="contribution-point"><strong>21 design ideas</strong>Gathered 21 unique feedback mechanisms opportunities for AV-pedestrian communication.</div><div class="contribution-point"><strong>3 prototypes</strong>Designed and developed three early e-textile based prototypes.</div><div class="contribution-point"><strong>Distributed communication</strong>Considered opportunities for shared awareness.</div></div></div><div class="links"><a href="https://dl.acm.org/doi/full/10.1145/3544549.3585655" target="_blank" rel="noreferrer">CHI ’23 Extended Abstract ↗</a><a href="https://drive.google.com/file/d/1HnwTmWND_SHsq-GM0Syjys7VPUcCRvbR/view?usp=sharing"target="_blank" rel="noreferrer">Poster ↗</a></div></article>
+
+
+<article class="project" id="project-social-acceptability"><!-- Replace this placeholder with an image of your Wearing Awareness prototypes. --><div class="project-carousel awareness" data-carousel aria-label="Wearing Awareness project figures">
+<div class="carousel-slides">
+<div class="carousel-slide is-active"><div class="carousel-placeholder"><img src="SAframework.jpeg"><span>Socially Acceptable Wellbeing Wearables · A snippet of the early framework we derived from our comparison..</span></div></div>
+</div><!--<div class="carousel-dots" aria-label="Choose figure"></div><div class="carousel-controls"><button type="button" data-prev aria-label="Previous figure">‹</button><span class="carousel-count" aria-live="polite">1 / 3</span><button type="button" data-next aria-label="Next figure">›</button></div>--></div><div class="project-top"><span class="eyebrow">Well-being · Wearables · Social Acceptability</span><span class="tag">ONGOING</span></div><h3>Socially acceptable well-being wearables</h3><div class="subtitle">Understanding relationships between design considerations informing social acceptance</div><p>Connecting insights from my three previous projects, this exploratory work compared commercial well-being wearables with participant-proposed designs to explore how broader societal considerations such as context, device goals, and audiences inform how device characteristics are designed. We demonstrate that social acceptability is better understood as a spectrum shaped by relationships among multiple attributes rather than as a linear checklist.</p><!--<div class="project-contribution"><div class="contribution-label">Research contribution</div><div class="contribution-points"><div class="contribution-point"><strong>Systematic Literature Review</strong>Derived an early framework based on design considerations informing social acceptability in literature.</div><div class="contribution-point"><strong>36 well-being wearable designs</strong>Gathered 36 participant sketches, of which 12 oppose and 12 extend existing social acceptability strategies.</div></div></div>--><div class="links"><a href="https://everydaywearableforhealth.github.io/assets/pdf/Lakhdhir.pdf" target="_blank" rel="noreferrer">CHI ’26 workshop short paper ↗</a><!--<a href="https://sabrinalakhdhir.github.io/Research-%2B-Publications.html" target="_blank" rel="noreferrer">CHI ’26 workshop short paper ↗</a> --> </div></article>
+
+
+<!--<article class="project" id="project-social-acceptability"><div class="project-top"><span class="eyebrow">Well-being · Wearables · Social Acceptability</span><span class="tag">ONGOING</span></div><h3>Towards a framework for designing socially acceptable wearables for well-being</h3><div class="subtitle">A spectrum-based design space</div><p>Connecting insights from my three previous projects, this exploratory work compared commercial well-being wearables with participant-proposed designs to explore how broader societal considerations such as context, device goals, and audiences inform how device characteristics are designed. We demonstrate that social acceptability is better understood as a spectrum shaped by relationships among multiple attributes rather than as a linear checklist.</p><div class="links"><a href="https://everydaywearableforhealth.github.io/assets/pdf/Lakhdhir.pdf" target="_blank" rel="noreferrer">CHI ’26 workshop short paper ↗</a><<a href="https://sabrinalakhdhir.github.io/Research-%2B-Publications.html" target="_blank" rel="noreferrer">CHI ’26 workshop short paper ↗</a>  </div></article>-->
 
 </div><h3 class="group-heading secondary">Related work in creativity, learning & communication.</h3><div class="projects">
-<article class="project"><div class="project-top"><span class="eyebrow">Creativity · Happiness</span><span class="tag">CHI 2026</span></div><h3>Understanding How Creativity Support Tools Foster Happiness</h3><div class="subtitle">Designing for positive creative experiences</div><p>Led by my supervisor, Dr. Sowmya Somanath, this work examines how people perceive their chosen creativity support tools as influencing happiness, and how such tools might be redesigned to cultivate happiness through creative activities. It presents design implications for reimagining creativity support.</p><div class="links"><a href="https://doi.org/10.1145/3772318.3790898" target="_blank" rel="noreferrer">CHI ’26 workshop paper ↗</a></div></article>
+<article class="project"><div class="project-top"><span class="eyebrow">Creativity · Happiness</span><span class="tag">CHI 2026</span></div><h3>Understanding How Creativity Support Tools Foster Happiness</h3><div class="subtitle">Designing for positive creative experiences</div><p>Led by my supervisor, Dr. Sowmya Somanath, this work examines how people perceive their chosen creativity support tools as influencing happiness, and how such tools might be redesigned to cultivate happiness through creative activities. It presents design implications for reimagining creativity support.</p><div class="links"><a href="https://doi.org/10.1145/3772318.3790898" target="_blank" rel="noreferrer">CHI ’26 full paper ↗</a></div></article>
 <article class="project"><div class="project-top"><span class="eyebrow">Well-being · Scaffolding</span><span class="tag">ONGOING</span></div><h3>Gratitude Buddy</h3><div class="subtitle">Towards a framework for understanding how gratitude apps can support affective scaffolding</div><p>Co-led by an undergraduate research assistant, this work considers how digital applications designing to support gratitude reflection elicit positive experiences and influence individuals' affective processes. Through a user study with a probe application, Gratitude Buddy, we developed a descriptive framework that extends the Theory of Affective Scaffolding's eight dimensions into 18 interface-level sub-dimensions that can guide the future design of affective scaffolding technologies. </p></article>
 </div></div></section>
 
-
-<!-- continue reviewing and editing from here -->
- <!--
-<section class="section future-section" id="future"><div class="wrap"><div class="section-head"><div><div class="eyebrow">· Future research directions ·</div><h2>Extending the possibilities of positive human experiences.</h2></div><p class="section-lead">Building on my research into custom wearables, self-expression, and social interaction, my future work broadens beyond wearables to ask how interactive technologies can intentionally cultivate more positive human experiences.</p></div>
-<p class="future-intro">How do we design interactive technologies that cultivate more positive human experiences—with ourselves, with others, and with the world around us? My future research interests include:</p>
-<div class="themes future-grid">
-<article class="theme"><span class="number">01 / WITH OURSELVES & OTHERS</span><h3>Technologies for emotional & social awareness</h3><p class="question">How might technology help people better understand their experiences and the perspectives of others?</p><p>This direction explores systems that support reflection on emotions, interpersonal dynamics, and the consequences of our actions. Rather than simply detecting or displaying states, technologies could help people make sense of experiences and respond more intentionally.</p></article>
-<article class="theme"><span class="number">02 / WITH OTHERS</span><h3>Technologies for positive social experiences</h3><p class="question">How can technology support more constructive, empathetic, and meaningful interactions?</p><p>This direction expands beyond wearable-mediated encounters to examine how interactive systems shape relationships, collaboration, and communication—including emotionally intensive tasks and AI-mediated interactions. The goal is not just to enable interaction, but to improve its human and relational consequences.</p></article>
-<article class="theme"><span class="number">03 / WITH THE WORLD</span><h3>Material & embodied interaction</h3><p class="question">How can physical, tangible, and embodied qualities of technology enrich human experience?</p><p>Building on my work with custom wearable artifacts, this direction investigates how materials, tangible interfaces, and embodied interactions can support expression, reflection, connection, and situated engagement with the world beyond conventional screen-based interaction.</p></article>
-</div>
-<div class="transition-note"><strong>From current work to future questions.</strong> My current research investigates how custom wearable technologies can foster positive social experiences by supporting self-expression, accounting for social context, and mediating interaction. Building on these foundations, my future research broadens this inquiry beyond wearables to explore how interactive technologies can cultivate more positive human experiences—with ourselves, with others, and with the world around us.</div>
-</div></section>
--->
 <section class="section" id="publications"><div class="wrap"><div class="section-head"><div><div class="eyebrow">· Selected Publications ·</div><h2>Research outputs.</h2></div><p class="section-lead">Selected peer-reviewed papers. To see a full list of workshop engagements and early-work that led to these publications, please see my <a href="https://drive.google.com/file/d/1T-hcU4v4MALC1vupWboWVR5NTpMLL1X0/view?usp=sharing" target="_blank" rel="noreferrer">CV</a>. For more project context, please <a href="mailto:sabrinalakhdhir@gmail.com" target="_blank" rel="noreferrer">reach out</a>! </p></div><div class="pubs">
 <div class="pub"><div class="year">2026</div><div><h3>Understanding How Creativity Support Tools Can Foster Happiness</h3><p>S. Somanath, M. Stewart, <b>S. Lakhdhir</b>, P. Berger, and R. L. Mandryk · CHI 2026</p></div><div class="venue"><a href="https://doi.org/10.1145/3772318.3790898" target="_blank" rel="noreferrer">Full paper ↗</a></div></div>
 <!--<div class="pub"><div class="year">2026</div><div><h3>Towards a Framework for Designing Socially Acceptable Wearables for Well-being</h3><p>Workshop poster and short paper · CHI 2026</p></div><div class="venue"><a href="https://sabrinalakhdhir.github.io/Research-%2B-Publications.html" target="_blank" rel="noreferrer">Outputs ↗</a></div></div>
@@ -101,4 +221,39 @@
 <section class="wrap" id="contact" style="padding-top:60px;padding-bottom:60px"><div class="contact"><div><div class="eyebrow">Get in touch</div></div><div><a class="btn primary" href="mailto:sabrinalakhdhir@gmail.com">Email me ↗</a></div></div></section>
 </main>
 <footer class="wrap footer"><span>© 2026 Sabrina Lakhdhir</span><div class="smalllinks"><a href="https://scholar.google.com/citations?user=CfYVpq8AAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a><a href="https://drive.google.com/file/d/1T-hcU4v4MALC1vupWboWVR5NTpMLL1X0/view?usp=sharing" target="_blank" rel="noreferrer">CV</a></div></footer>
+
+<script>
+/* Each project carousel works independently and supports buttons, dots, and keyboard focus. */
+document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+  const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+  const dots = carousel.querySelector('.carousel-dots');
+  const count = carousel.querySelector('.carousel-count');
+  let current = 0;
+  slides.forEach((slide, index) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.setAttribute('aria-label', `Show figure ${index + 1}`);
+    dot.addEventListener('click', () => show(index));
+    dots.appendChild(dot);
+  });
+  const dotButtons = Array.from(dots.querySelectorAll('button'));
+  function show(index) {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('is-active', i === current);
+      slide.setAttribute('aria-hidden', i === current ? 'false' : 'true');
+    });
+    dotButtons.forEach((dot, i) => dot.setAttribute('aria-current', i === current ? 'true' : 'false'));
+    count.textContent = `${current + 1} / ${slides.length}`;
+  }
+  carousel.querySelector('[data-prev]').addEventListener('click', () => show(current - 1));
+  carousel.querySelector('[data-next]').addEventListener('click', () => show(current + 1));
+  carousel.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') { event.preventDefault(); show(current - 1); }
+    if (event.key === 'ArrowRight') { event.preventDefault(); show(current + 1); }
+  });
+  carousel.tabIndex = 0;
+  show(0);
+});
+</script>
 </body></html>
